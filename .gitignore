@@ -21,3 +21,9 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### NPM ###
+node_modules/
+
+### REACT ###
+public/bundle.js

@@ -15,6 +15,9 @@ import lombok.Data;
 @Data
 public class Board {
 	
+	public static final int MAX_LENGTH_TITLE = 100;
+	public static final int MAX_LENGTH_CONTENT = 500;
+	
 	public Board(String title) {
 		this.title = title;
 	}
@@ -25,14 +28,14 @@ public class Board {
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(nullable=false)
+	@Column(nullable = false, length = MAX_LENGTH_TITLE)
 	private String title;
 	
 	@Lob
-	@Column(nullable=false)
+	@Column(nullable = false, length = MAX_LENGTH_CONTENT)
 	private String content;
 
 }
